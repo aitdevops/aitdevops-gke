@@ -3,21 +3,35 @@ frontend:
   service:
     type: LoadBalancer
     port: 80
+  metrics:
+    port: 8080
 
 orderService:
   image: us-central1-docker.pkg.dev/aitdevops8/aitdevops-gke/order-service:latest
   service:
     type: ClusterIP
     port: 5002
+  metrics:
+    port: 8080
 
 productService:
   image: us-central1-docker.pkg.dev/aitdevops8/aitdevops-gke/product-service:latest
   service:
     type: ClusterIP
     port: 5001
+  metrics:
+    port: 8080
 
 userService:
   image: us-central1-docker.pkg.dev/aitdevops8/aitdevops-gke/user-service:latest
   service:
     type: ClusterIP
     port: 5003
+  metrics:
+    port: 8080
+
+prometheus:
+  enabled: true
+
+grafana:
+  enabled: true

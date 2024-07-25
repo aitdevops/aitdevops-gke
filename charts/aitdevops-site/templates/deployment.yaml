@@ -24,3 +24,13 @@ spec:
         image: {{ .Values.frontend.image }}
         ports:
         - containerPort: {{ .Values.frontend.service.port }}
+        - containerPort: {{ .Values.frontend.metrics.port }}
+          name: metrics
+        livenessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
+        readinessProbe:
+          httpGet:
+            path: /metrics
+            port: metrics
