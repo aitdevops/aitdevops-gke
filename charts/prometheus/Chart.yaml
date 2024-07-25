@@ -3,3 +3,8 @@ name: prometheus
 description: A Helm chart for Prometheus
 version: 14.8.0
 appVersion: 2.26.0
+
+dependencies:
+  - name: grafana
+    version: "6.17.1"
+    repository: "https://grafana.github.io/helm-charts"
