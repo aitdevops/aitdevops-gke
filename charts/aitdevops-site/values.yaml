@@ -31,7 +31,11 @@ userService:
     port: 8080
 
 prometheus:
-  enabled: true
+  prometheusSpec:
+    serviceMonitorSelectorNilUsesHelmValues: false
 
 grafana:
-  enabled: true
+  adminPassword: 'admin'
+  service:
+    type: LoadBalancer
+    port: 3000
