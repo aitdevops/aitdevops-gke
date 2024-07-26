@@ -29,13 +29,3 @@ userService:
     port: 5003
   metrics:
     port: 8080
-
-prometheus:
-  prometheusSpec:
-    serviceMonitorSelectorNilUsesHelmValues: false
-
-grafana:
-  adminPassword: 'admin'
-  service:
-    type: LoadBalancer
-    port: 3000
