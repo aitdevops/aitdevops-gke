@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const productServiceUrl = 'https://product.aitdevops.com';
-    const orderServiceUrl = 'https://order.aitdevops.com';
-    const userServiceUrl = 'https://user.aitdevops.com';
+    const productServiceUrl = 'http://aitdevops-site-product-service.default.svc.cluster.local';
+    const orderServiceUrl = 'http://aitdevops-site-order-service.default.svc.cluster.local';
+    const userServiceUrl = 'http://aitdevops-site-user-service.default.svc.cluster.local';
+    
 
     document.getElementById('fetch-products').addEventListener('click', function() {
         fetch(`${productServiceUrl}/products`)

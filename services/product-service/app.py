@@ -10,7 +10,7 @@ def products():
         "products": [
             "Rolls-Royce",
             "Bently",
-            "Maybch"
+            "Maybach"
         ]
     }
 
