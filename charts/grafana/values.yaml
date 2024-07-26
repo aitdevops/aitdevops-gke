@@ -1,4 +1,4 @@
 service:
-  type: ClusterIP
+  type: LoadBalancer
   port: 3000
   targetPort: 3000
