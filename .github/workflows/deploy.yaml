@@ -1,4 +1,4 @@
-name: Deploy to GKE
+name: CI/CD Pipeline
 
 on:
   push:
@@ -57,3 +57,11 @@ jobs:
           --set orderService.image=us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/aitdevops-gke/order-service:${{ env.IMAGE_TAG }} \
           --set productService.image=us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/aitdevops-gke/product-service:${{ env.IMAGE_TAG }} \
           --set userService.image=us-central1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/aitdevops-gke/user-service:${{ env.IMAGE_TAG }}
+
+    - name: Deploy Prometheus to GKE
+      run: |
+        helm upgrade --install prometheus ./charts/prometheus
+
+    - name: Deploy Grafana to GKE
+      run: |
+        helm upgrade --install grafana ./charts/grafana
