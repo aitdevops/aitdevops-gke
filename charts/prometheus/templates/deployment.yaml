@@ -3,10 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "prometheus.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "prometheus.name" . }}
-    helm.sh/chart: {{ include "prometheus.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{ include "prometheus.labels" . | nindent 4 }}
 spec:
   replicas: 1
   selector:
@@ -21,13 +18,6 @@ spec:
     spec:
       containers:
       - name: prometheus
-        image: prom/prometheus:v2.26.0
+        image: prom/prometheus:latest
         ports:
-        - containerPort: 9090
-        volumeMounts:
-        - name: config-volume
-          mountPath: /etc/prometheus/
-      volumes:
-      - name: config-volume
-        configMap:
-          name: prometheus-config
+        - containerPort: {{ .Values.service.port }}
