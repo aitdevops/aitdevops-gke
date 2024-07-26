@@ -3,17 +3,12 @@ kind: Service
 metadata:
   name: {{ include "grafana.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "grafana.name" . }}
-    helm.sh/chart: {{ include "grafana.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{ include "grafana.labels" . | nindent 4 }}
 spec:
-  type: LoadBalancer
+  type: {{ .Values.service.type }}
   ports:
-  - port: 3000
-    targetPort: 3000
-    protocol: TCP
-    name: http
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
   selector:
     app.kubernetes.io/name: {{ include "grafana.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}

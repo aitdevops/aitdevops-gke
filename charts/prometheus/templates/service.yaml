@@ -3,17 +3,12 @@ kind: Service
 metadata:
   name: {{ include "prometheus.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "prometheus.name" . }}
-    helm.sh/chart: {{ include "prometheus.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{ include "prometheus.labels" . | nindent 4 }}
 spec:
-  type: ClusterIP
+  type: {{ .Values.service.type }}
   ports:
-  - port: 9090
-    targetPort: 9090
-    protocol: TCP
-    name: http
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
   selector:
     app.kubernetes.io/name: {{ include "prometheus.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
