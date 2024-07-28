@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const productServiceUrl = 'http://10.0.19.213:5001';
-    const orderServiceUrl = 'http://10.0.20.243:5002';
-    const userServiceUrl = 'http://10.0.22.225:5003';
+    const productServiceUrl = 'http://10.0.19.213:5001/';
+    const orderServiceUrl = 'http://10.0.20.243:5002/';
+    const userServiceUrl = 'http://10.0.22.225:5003/';
     
 
     document.getElementById('fetch-products').addEventListener('click', function() {
