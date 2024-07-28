@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const productServiceUrl = 'http://product-service.default.svc.cluster.local:5001';
-    const orderServiceUrl = 'http://order-service.default.svc.cluster.local:5002';
-    const userServiceUrl = 'http://user-service.default.svc.cluster.local:5003';
+    const productServiceUrl = 'http://aitdevops-site-aitdevops-site-product-service.default.svc.cluster.local:5001';
+    const orderServiceUrl = 'http://aitdevops-site-aitdevops-site-order-service.default.svc.cluster.local:5002';
+    const userServiceUrl = 'http://aitdevops-site-aitdevops-site-user-service.default.svc.cluster.local:5003';
+
     
 
     document.getElementById('fetch-products').addEventListener('click', function() {
