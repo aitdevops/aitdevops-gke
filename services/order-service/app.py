@@ -9,7 +9,7 @@ def orders():
     return {
         "orders": [
             "Order 1",
-            "Or 2",
+            "Order 2",
             "Order 3"
         ]
     }
