@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "aitdevops-site.name" . }}
@@ -37,7 +37,7 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
-  replicas: 1
+  replicas: 
   selector:
     matchLabels:
       app.kubernetes.io/name: {{ include "aitdevops-site.name" . }}
