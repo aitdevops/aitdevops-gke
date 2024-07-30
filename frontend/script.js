@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const productServiceUrl = 'http://10.0.16.228:5001/products:5001';
-    const orderServiceUrl = 'http://10.0.16.145:5002/orders';
-    const userServiceUrl = 'http://34.133.71.58:5003/users';
+    const productServiceUrl = 'http://10.0.8.37:5001/products';
+    const orderServiceUrl = 'http://10.0.8.36:5002/orders';
+    const userServiceUrl = 'http://10.0.8.38:5003/users';
 
     
 
