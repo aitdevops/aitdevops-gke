@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const productServiceUrl = 'http://aitdevops-site-aitdevops-site-product-service.default.svc.cluster.local:5001';
-    const orderServiceUrl = 'http://aitdevops-site-aitdevops-site-order-service.default.svc.cluster.local:5002';
-    const userServiceUrl = 'http://aitdevops-site-aitdevops-site-user-service.default.svc.cluster.local:5003';
+    const productServiceUrl = 'http://10.0.16.228:5001/products:5001';
+    const orderServiceUrl = 'http://10.0.16.145:5002/orders';
+    const userServiceUrl = 'http://34.133.71.58:5003/users';
 
     
 

@@ -7,17 +7,17 @@ frontend:
 orderService:
   image: us-central1-docker.pkg.dev/aitdevops8/aitdevops-gke/order-service:latest
   service:
-    type: ClusterIP
+    type: NodePort
     port: 5002
 
 productService:
   image: us-central1-docker.pkg.dev/aitdevops8/aitdevops-gke/product-service:latest
   service:
-    type: ClusterIP
+    type: NodePort
     port: 5001
 
 userService:
   image: us-central1-docker.pkg.dev/aitdevops8/aitdevops-gke/user-service:latest
   service:
-    type: ClusterIP
+    type: LoadBalancer
     port: 5003
